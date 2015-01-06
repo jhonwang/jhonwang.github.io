@@ -17,12 +17,34 @@
       body{
         padding:30px 0 0;
       }
+      .demo-wrapper{
+        position:relative;
+      }
+        .demo{
+          position:absolute;
+          top:47px;
+          right:5%;
+          width:92px;
+          height:200px;
+          background:url(./img/demo.png) no-repeat 0 0;
+          background-size:100%;
+          opacity:.2;
+          animation: move 20s linear 0s infinite;
+          -webkit-animation: move 20s linear 0s infinite;
+        }
       dl{
         overflow:hidden;
-        margin:0 0 3px;
+        margin:5px 0;
       }
         dt{
           float:left;
+        }
+        h2{
+          margin:15px 0 30px;
+        }
+        h2 span{
+          font-size:20px;
+          color:rgba(0,0,0,.05);
         }
       .work-wrapper{}
         .title{
@@ -50,6 +72,23 @@
           .work-wrapper .span10 p{
             color:#5a5a5a;
           }
+          @-webkit-keyframes move {
+            0% {
+              -webkit-transform:rotateY(0);
+            }
+
+            33% {
+              -webkit-transform:translateX(-15%);
+            }
+
+            66% {
+              -webkit-transform:translateX(10%);
+            }
+
+            100%{
+              -webkit-transform:translateX(0%);
+            }
+          }
     </style>
   </head>
   <body>
@@ -72,8 +111,12 @@
           </ul>
         </aside> -->
 
-        <section class="span12">
-          <h2>王增刚</h2>
+        <section class="span12 demo-wrapper">
+          <span class="demo"></span>
+          <h2>
+            王增刚
+            <span>@前端开发攻城狮</span>
+          </h2>
           <dl>
             <dt>微博：</dt>
             <dd>
@@ -111,7 +154,7 @@
                     </li>
                     <li>
                       <h5>v2.0，模块化加载</h5>
-                      <p>负责部分功能开发及整站页面重构，如<a href="http://m.weibo.cn/setting?tab=priset">隐私设置</a>，使用 sea.js 实现加载，接触 nodejs, grunt 等自动化工具</p>
+                      <p>负责部分功能开发及整站页面重构，如<a href="http://m.weibo.cn/setting">设置</a>，使用 sea.js 实现加载，接触 nodejs, grunt 等自动化工具</p>
                     </li>
                     <li>
                       <h5>v1.0 &nbsp;index.css + index.js + skin.css</h5>
@@ -151,10 +194,64 @@
               <h2 class="title">Demo</h2>
               <section class="row">
                 <div class="span2">
-                  <h5>js</h5>
+                  <h5>JS</h5>
                 </div>
                 <div class="span10">
                   <h4>帐号某功能</h4>
+                  <pre>
+function init(){
+    var mod = new Mod({
+        validateForType:{
+            'vcode':/^[0-9]{6}$/,
+            'phone':/^1[34578][0-9]{9}$/,
+            'pwd':function(target,val,errorDom){
+                if(val == ''){
+                    this.showError(errorDom,'密码不能为空');
+                    return !1;
+                }else if(val.length < 6 || val.length >16){
+                    this.showError(errorDom,'密码为6-16位');
+                    return !1;
+                }
+                return !0;
+            }
+        },
+        modBtnList:{
+            'phone':'J-phone',
+            'email':'J-email'
+        },
+        eventsForId:{
+            'J-check-vcode':function(target){
+                this.submitInterface(target,'url',null,!1,!1,'phone');
+            },
+            'J-phone':function(target){
+                this.submitInterface(target,'url')
+            }
+        },
+        responseFunForId:{
+            'J-check-vcode':function(data,target,errorDom){
+                if(data.retcode == '20000000'){
+                    Tools.addClass(target,'isDisable');
+                    mod.resendLoop(target,120)
+                }else{
+                    mod.showError(errorDom,data.msg);
+                }
+            },
+            'J-phone':normalSuccessFun
+        }
+    });
+
+    // 成功处理函数
+    function normalSuccessFun(data,target,errorDom){
+        if(data && data.retcode == 2e7 && data.data){
+            location.href = data.data.url;
+        }else{
+            this.showError(errorDom,data.msg?data.msg:'系统繁忙，稍后重试');
+        }
+    }
+
+}
+window.addEventListener("DOMContentLoaded", init, false);
+                  </pre>
                 </div>
               </section>
               <section class="row">
