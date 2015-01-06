@@ -3,41 +3,205 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Jhonwang.GitHub.io by jhonwang</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <title>花花世界</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+      dl,dt,dd{
+        margin:0;
+        padding:0;
+      }
+      a,a:hover{
+        text-decoration:none;
+      }
+      body{
+        padding:30px 0 0;
+      }
+      dl{
+        overflow:hidden;
+        margin:0 0 3px;
+      }
+        dt{
+          float:left;
+        }
+      .work-wrapper{}
+        .title{
+          margin:15px 0 25px;
+          padding:0 15px;
+          color: #333;
+          font-size:18px;
+          background-color: #dff0d8;
+          border-radius:2px;
+        }
+        .work-wrapper .row{
+          margin-bottom:30px;
+        }
+          .work-wrapper .span2 h5{
+            padding:0 0 0 15px;
+            font-weight:400;
+          }
+          .work-wrapper .span10 h4{
+            padding:0 0 10px;
+            border-bottom:#eee solid 1px;
+          }
+          .work-wrapper .span10 h5{
+            margin:10px 0 5px;
+          }
+          .work-wrapper .span10 p{
+            color:#5a5a5a;
+          }
+    </style>
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Jhonwang.GitHub.io</h1>
-        <p></p>
+
+    <div class="container">
+
+      <article class="row">
+
+       <!--  <aside class="span2">
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active">
+              <a href="#info">基本信息</a>
+            </li>
+            <li>
+              <a href="#project">工作经验</a>
+            </li>
+            <li>
+              <a href="#code">代码Demo</a>
+            </li>
+          </ul>
+        </aside> -->
+
+        <section class="span12">
+          <h2>王增刚</h2>
+          <dl>
+            <dt>微博：</dt>
+            <dd>
+              <a href="http://weibo.com/u/1685300840" target="_blank">@gangzi818</a>
+            </dd>
+          </dl>
+          <dl>
+            <dt>手机：</dt>
+            <dd>15001088576</dd>
+          </dl>
+          <dl>
+            <dt>邮箱：</dt>
+            <dd>
+              <a href="mailto:wangzengag@163.com">wangzengag@163.com</a>
+            </dd>
+          </dl>
+
+          <!-- 工作经验 -->
+          <article class="row work-wrapper">
+            <div class="span12">
+              <h2 class="title">工作经验</h2>
+              <section class="row">
+                <div class="span2">
+                  <h5>2011.09 ~ 至今</h5>
+                </div>
+                <div class="span10">
+                  <h4>
+                    手机微博
+                    <a href="http://m.weibo.cn" target="_blank">m.weibo.cn</a>
+                  </h4>
+                  <ul>
+                    <li>
+                      <h5>v3.0，前端自动化</h5>
+                      <p>负责部分模块开发及样式规范，维护帐号相关功能，引入样式预处理，使用自动化工具实现本地代码调试等</p>
+                    </li>
+                    <li>
+                      <h5>v2.0，模块化加载</h5>
+                      <p>负责部分功能开发及整站页面重构，如<a href="http://m.weibo.cn/setting?tab=priset">隐私设置</a>，使用 sea.js 实现加载，接触 nodejs, grunt 等自动化工具</p>
+                    </li>
+                    <li>
+                      <h5>v1.0 &nbsp;index.css + index.js + skin.css</h5>
+                      <p>负责主站部分功能开发及页面的制作，主要适配 Android 及 iOS 默认浏览器，使用 Zepto.js 可满足需求，开始学习并熟悉H5相关内容开发</p>
+                      <p>期间完成炫彩皮肤适配（那个时候网站的皮肤设置好像很流行）,修改样式真是个细致活儿，开始关注样式命名规则，复用等内容</p>
+                    </li>
+                    <li>
+                      <h5>其他</h5>
+                      <p>三星Gear微博客户端：Hybird 应用</p>
+                      <p>微博头条客户端：正文页使用 html 制作；及浏览器访问页面实现</p>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+
+              <section class="row">
+                <div class="span2">
+                  <h5>2009.10 ~ 2011.09</h5>
+                </div>
+                <div class="span10">
+                  <h4>
+                    熙康网
+                    <a href="http://www.xikang.com" target="_blank">www.xikang.com</a>
+                  </h4>
+                  <p>负责全站的前端工作，js交互依赖jQuery实现，适配PC端浏览器（IE6 7, firefox, chrome, opera)</p>
+                  <p>在这段工作期间，了解并学习前端相关基础知识，各种兼容hack，网站优化原则等内容</p>
+                  <p>页面有所更改，翻了翻，部分页面保留，如<a href="http://www.xikang.com/shicai/detail/136" target="_blank">食材详情</a>，<a href="http://www.xikang.com/lohas" target="_blank">乐活指数测试</a>，<a href="http://www.xikang.com/tizhi">中医体质测试</a>等</p>
+                </div>
+              </section>
+
+            </div>
+          </article>
+
+          <!-- 代码Demo -->
+          <article class="row work-wrapper">
+            <div class="span12">
+              <h2 class="title">Demo</h2>
+              <section class="row">
+                <div class="span2">
+                  <h5>js</h5>
+                </div>
+                <div class="span10">
+                  <h4>帐号某功能</h4>
+                </div>
+              </section>
+              <section class="row">
+                <div class="span2">
+                  <h5>SASS</h5>
+                </div>
+                <div class="span10">
+                  <h4>高清屏 1px 边框样式</h4>
+                  <pre>
+/*
+  @include border-half-px(left top bottom right,blue); 
+*/
+@mixin border-half-px($type,$color){
+  @each $var in $type {
+    border-#{$var}:$color solid 1px;
+  }
+  @at-root{
+    @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+      &{
+        border: none;
+        background-repeat: no-repeat;
+        background-image:nth(half-px-processor($type,$color),1);
+        background-image:nth(half-px-processor($type,$color),2);
+        background-image:nth(half-px-processor($type,$color),3);
+        -wekbit-background-image:nth(half-px-processor($type,$color),4);
+        background-size:nth(half-px-processor($type,$color),4);
+        background-position:nth(half-px-processor($type,$color),5);
+      }
+    }
+  }
+}
+@function half-px-processor($type,$color){
+  ...
+}
+                    </pre>
+                </div>
+              </section>
+            </div>
+          </article>
 
 
-        <p class="view"><a href="https://github.com/jhonwang">View My GitHub Profile</a></p>
+        </section>
 
-      </header>
-      <section>
-        <h3>
-<a id="王增刚" class="anchor" href="#%E7%8E%8B%E5%A2%9E%E5%88%9A" aria-hidden="true"><span class="octicon octicon-link"></span></a>王增刚</h3>
-
-<p><a href="mailto:wangzengag@gmail.com">wangzengag@gmail.com</a></p>
-
-<h3>
-<a id="工作经历" class="anchor" href="#%E5%B7%A5%E4%BD%9C%E7%BB%8F%E5%8E%86" aria-hidden="true"><span class="octicon octicon-link"></span></a>工作经历</h3>
-
-<p>2011-2015 新浪微博</p>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+      </article>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
