@@ -140,7 +140,31 @@
               <h2 class="title">工作经验</h2>
               <section class="row">
                 <div class="span2">
-                  <h5>2011.09 ~ 至今</h5>
+                  <h5>2015.06 ~ 至今</h5>
+                </div>
+                <div class="span10">
+                  <h4>
+                    知道创宇
+                  </h4>
+                  <ul>
+                    <li>
+                      <h5>前端</h5>
+                      <p>负责项目页面制作及交互功能实现，使用 bootstrap 完成</p>
+                    </li>
+                    <li>
+                      <h5>后端</h5>
+                      <p>参与后端功能的开发，项目使用 django + mongo + nginx + uwsgi 部署</p>
+                    </li>
+                    <li>
+                      <h5>其他</h5>
+                      <p>项目安装脚本，安装盘制作，服务器安装维护，python 小工具开发等</p>
+                    </li>
+                </div>
+              </section>
+
+              <section class="row">
+                <div class="span2">
+                  <h5>2011.09 ~ 2015.06</h5>
                 </div>
                 <div class="span10">
                   <h4>
@@ -185,110 +209,6 @@
                 </div>
               </section>
 
-            </div>
-          </article>
-
-          <!-- 代码Demo -->
-          <article class="row work-wrapper">
-            <div class="span12">
-              <h2 class="title">Demo</h2>
-              <section class="row">
-                <div class="span2">
-                  <h5>JS</h5>
-                </div>
-                <div class="span10">
-                  <h4>帐号某功能</h4>
-                  <pre>
-function init(){
-    var mod = new Mod({
-        validateForType:{
-            'vcode':/^[0-9]{6}$/,
-            'phone':/^1[34578][0-9]{9}$/,
-            'pwd':function(target,val,errorDom){
-                if(val == ''){
-                    this.showError(errorDom,'密码不能为空');
-                    return !1;
-                }else if(val.length < 6 || val.length >16){
-                    this.showError(errorDom,'密码为6-16位');
-                    return !1;
-                }
-                return !0;
-            }
-        },
-        modBtnList:{
-            'phone':'J-phone',
-            'email':'J-email'
-        },
-        eventsForId:{
-            'J-check-vcode':function(target){
-                this.submitInterface(target,'url',null,!1,!1,'phone');
-            },
-            'J-phone':function(target){
-                this.submitInterface(target,'url')
-            }
-        },
-        responseFunForId:{
-            'J-check-vcode':function(data,target,errorDom){
-                if(data.retcode == '20000000'){
-                    Tools.addClass(target,'isDisable');
-                    mod.resendLoop(target,120)
-                }else{
-                    mod.showError(errorDom,data.msg);
-                }
-            },
-            'J-phone':normalSuccessFun
-        }
-    });
-
-    // 成功处理函数
-    function normalSuccessFun(data,target,errorDom){
-        if(data && data.retcode == 2e7 && data.data){
-            location.href = data.data.url;
-        }else{
-            this.showError(errorDom,data.msg?data.msg:'系统繁忙，稍后重试');
-        }
-    }
-
-}
-window.addEventListener("DOMContentLoaded", init, false);
-                  </pre>
-                </div>
-              </section>
-              <section class="row">
-                <div class="span2">
-                  <h5>SASS</h5>
-                </div>
-                <div class="span10">
-                  <h4>高清屏 1px 边框样式</h4>
-                  <pre>
-/*
-  @include border-half-px(left top bottom right,blue); 
-*/
-@mixin border-half-px($type,$color){
-  @each $var in $type {
-    border-#{$var}:$color solid 1px;
-  }
-  @at-root{
-    @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
-      &{
-        border: none;
-        background-repeat: no-repeat;
-        background-image:nth(half-px-processor($type,$color),1);
-        background-image:nth(half-px-processor($type,$color),2);
-        background-image:nth(half-px-processor($type,$color),3);
-        -wekbit-background-image:nth(half-px-processor($type,$color),4);
-        background-size:nth(half-px-processor($type,$color),4);
-        background-position:nth(half-px-processor($type,$color),5);
-      }
-    }
-  }
-}
-@function half-px-processor($type,$color){
-  ...
-}
-                    </pre>
-                </div>
-              </section>
             </div>
           </article>
 
